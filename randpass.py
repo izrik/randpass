@@ -7,15 +7,17 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--length', type=int, action='store', default=8)
 parser.add_argument('-n', action='store_true')
+parser.add_argument('--count', type=int, action='store', default=1)
 
 args = parser.parse_args()
 
 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=+'
 
-password = ''.join(choice(chars) for _ in xrange(args.length))
+for i in xrange(args.count):
+    password = ''.join(choice(chars) for _ in xrange(args.length))
 
-if args.n:
-  print(password, end='')
-else:
-  print(password)
+    if args.n:
+        print(password, end='')
+    else:
+        print(password)
 
