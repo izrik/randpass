@@ -9,10 +9,13 @@ parser.add_argument('--length', type=int, action='store', default=16)
 parser.add_argument('-n', action='store_true')
 parser.add_argument('--count', type=int, action='store', default=1)
 parser.add_argument('--include-symbols', action='store_true')
+parser.add_argument('--lower', action='store_true')
 
 args = parser.parse_args()
 
 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+if args.lower:
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
 if args.include_symbols:
     chars += '=+'
 
