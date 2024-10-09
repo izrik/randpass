@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import print_function
 from random import choice
@@ -12,7 +12,7 @@ def generate_password(lowercase=False, include_symbols=False, length=16):
     if include_symbols:
         chars += '=+'
 
-    return ''.join(choice(chars) for _ in xrange(length))
+    return ''.join(choice(chars) for _ in range(length))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    for i in xrange(args.count):
+    for i in range(args.count):
         password = generate_password(lowercase=args.lower,
                                      include_symbols=args.include_symbols,
                                      length=args.length)
